@@ -1,0 +1,19 @@
+{
+  "name": "teams-web-rtl",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Automatic paragraph direction for Teams web with a Mac launcher",
+  "license": "MIT",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/*.test.cjs && electron . --smoke-test",
+    "test:unit": "node --test tests/*.test.cjs",
+    "extension": "node scripts/build-extension.cjs",
+    "screenshots": "electron scripts/screenshots.cjs",
+    "release": "node scripts/build-release.cjs"
+  },
+  "devDependencies": {
+    "electron": "45.1.0"
+  }
+}

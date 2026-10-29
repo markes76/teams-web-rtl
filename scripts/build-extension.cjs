@@ -1,0 +1,14 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const assert = require('node:assert/strict');
+const root = path.resolve(__dirname, '..');
+const dir = path.join(root, 'extension');
+const manifest = JSON.parse(fs.readFileSync(path.join(dir, 'manifest.json'), 'utf8'));
+assert.equal(manifest.manifest_version, 3);
+assert.equal(manifest.content_scripts[0].world, 'ISOLATED');
+assert.deepEqual(manifest.content_scripts[0].matches, ['https://teams.microsoft.com/*', 'https://teams.cloud.microsoft/*']);
+assert.deepEqual(manifest.permissions, ['storage']);
+assert.deepEqual(manifest.background, {service_worker:'windows.js'});
+fs.copyFileSync(path.join(root, 'preload.cjs'), path.join(dir, 'direction.js'));
+assert.equal(fs.readFileSync(path.join(dir, 'direction.js'), 'utf8'), fs.readFileSync(path.join(root, 'preload.cjs'), 'utf8'));
+console.log(`Extension files ready: ${dir}\nReload the installed extension to activate changes.`);

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'none'; img-src 'none'">
+<title>Teams RTL · Local demo</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f5f9;color:#242a3a;font:15px -apple-system,BlinkMacSystemFont,sans-serif}
+header{height:72px;background:#fff;border-bottom:1px solid #dde0ea;display:flex;align-items:center;justify-content:space-between;padding:0 38px}
+header strong{font-size:19px;letter-spacing:-.4px}header span{color:#62677c;font-size:12px}
+main{max-width:1000px;margin:52px auto;padding:0 32px}.tag{font-size:11px;letter-spacing:1.7px;color:#625cbb;font-weight:700}
+h1{font-size:36px;letter-spacing:-1px;line-height:1.15;max-width:660px;margin:15px 0}p.intro{color:#64697c;line-height:1.65;max-width:750px}
+.card{margin-top:54px;background:#fff;border:1px solid #d7dbe6;border-radius:13px;box-shadow:0 10px 35px #252e4e08}
+.tools{padding:17px 22px;border-bottom:1px solid #eceef5;color:#686e82;font-size:12px}
+[contenteditable]{padding:24px 28px;min-height:260px;outline:none;font-size:19px;line-height:1.8;border-bottom:3px solid #625cbb;border-radius:0 0 11px 11px}
+[contenteditable]:focus{box-shadow:0 0 0 2px #625cbb22}[contenteditable] p{margin:0 0 18px}
+.note{font-size:12px;color:#6b7183;line-height:1.65;margin-top:17px}.steps{display:flex;gap:22px;margin-top:30px;color:#4c5368;font-size:13px}.steps b{display:block;margin-bottom:7px;color:#2b3042}
+#local-app-rail{position:fixed;left:0;top:72px;bottom:0;width:68px;background:#ececf2;border-right:1px solid #dddfe8}
+#local-app-rail nav{display:flex;flex-direction:column;gap:8px;padding:12px 0}
+#local-app-rail button{display:block;width:68px;height:44px;border:0;background:none;color:#616477;font:11px -apple-system,sans-serif}
+</style></head><body>
+<header><strong>Teams RTL <span> / local demo</span></strong><span>Local test surface · synthetic text · nothing is sent</span></header>
+<aside id="local-app-rail" aria-label="Local test app rail"><nav aria-label="Apps"><button type="button">Chat</button><button type="button">Calls</button><button type="button">Calendar</button></nav><div data-tid="app-bar-overflow"><div aria-label="View more apps"><button type="button" data-tid="appbar-flyout-button" aria-label="View more apps">•••</button></div></div></aside>
+<main><div class="tag">ENGLISH INTERFACE. INDEPENDENT TEXT DIRECTION.</div>
+<h1>Write in either language.<br>Keep your interface in English.</h1>
+<p class="intro">Type Hebrew and English in separate paragraphs. Auto follows each paragraph’s first strong letter. Use RTL when a Hebrew sentence starts with an English name, or LTR to override it.</p>
+<section class="card"><div class="tools">Local composer · select a paragraph to change its direction</div>
+<div contenteditable="true" role="textbox" aria-label="Local test message" aria-multiline="true" data-tid="ckeditor" spellcheck="false"><p>שלום, הפגישה עם Teams תתחיל בשעה 10:30 (בדיקה בלבד).</p><p>Hello, the Teams meeting starts at 10:30 (local test only).</p><p>123 — בדיקת עברית עם מספר בתחילת המשפט.</p></div></section>
+<div class="note">Synthetic local demo. No account or chat data is used. Local composition direction is not guaranteed to survive sending or appear in recipients’ clients.</div>
+<div class="steps"><div><b>01 / Auto</b>Independent direction for each paragraph.</div><div><b>02 / RTL &amp; LTR</b>Override the current or selected paragraphs.</div><div><b>03 / Microsoft Teams</b>Keeps your normal Chrome sign-in.</div></div>
+</main></body></html>

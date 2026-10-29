@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Teams RTL controls</title>
+<style>
+body{width:280px;margin:0;padding:20px;background:#fff;color:#24283d;font:13px -apple-system,BlinkMacSystemFont,sans-serif}
+h1{font-size:17px;margin:0 0 6px;letter-spacing:-.3px}p{color:#62697b;line-height:1.5;margin:0 0 18px}
+label{display:flex;gap:10px;align-items:center;border:1px solid #dedfea;border-radius:9px;padding:13px;cursor:pointer;font-weight:600;margin-top:10px}
+input{width:17px;height:17px;accent-color:#5652bd}output{display:block;margin-top:12px;color:#4b5268;font-size:12px;line-height:1.5}
+button{border:0;border-radius:8px;background:#5652bd;color:white;padding:11px 14px;width:100%;font:inherit;font-weight:600;margin-top:14px;cursor:pointer}button:disabled{opacity:.65}
+.note{border-top:1px solid #ececf3;margin:16px 0 0;padding-top:13px;font-size:11px}
+</style></head><body>
+<h1>Teams RTL</h1><p>Automatic direction stays active, even with the sidebar shortcut hidden.</p>
+<label><input id="show-toolbar" type="checkbox">Show Text direction in the Teams sidebar</label>
+<output id="status" role="status" aria-live="polite">Loading preference…</output>
+<label><input id="auto-call-chat" type="checkbox">Open a chat window when a call starts</label>
+<button id="open-chat" type="button">Open separate chat window</button>
+<output id="window-status" role="status" aria-live="polite">Calls stay in their original window.</output>
+<p class="note">Use the Text shortcut beneath Teams’ left sidebar ellipsis for Auto / RTL / LTR. Your preference is saved on this Mac.</p>
+<script src="popup.js"></script></body></html>
