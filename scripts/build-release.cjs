@@ -11,8 +11,8 @@ for(const item of ['extension','assets/app.icns','installer/Install.command','in
 fs.chmodSync(path.join(stage,'Install.command'),0o755);
 const macZip=path.join(dist,`${name}.zip`),extZip=path.join(dist,`teams-rtl-${version}-extension.zip`);
 for(const file of [macZip,extZip])fs.rmSync(file,{force:true});
-execFileSync('/usr/bin/ditto',['-c','-k','--keepParent',stage,macZip]);
-execFileSync('/usr/bin/ditto',['-c','-k','--keepParent',path.join(root,'extension'),extZip]);
+execFileSync('/usr/bin/ditto',['-c','-k','--norsrc','--noextattr','--keepParent',stage,macZip]);
+execFileSync('/usr/bin/ditto',['-c','-k','--norsrc','--noextattr','--keepParent',path.join(root,'extension'),extZip]);
 const crypto=require('node:crypto');
 fs.writeFileSync(path.join(dist,'SHA256SUMS.txt'),[macZip,extZip].map(file=>`${crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')}  ${path.basename(file)}`).join('\n')+'\n');
 console.log([macZip,extZip,path.join(dist,'SHA256SUMS.txt')].join('\n'));
